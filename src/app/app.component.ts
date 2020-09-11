@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Github Search';
 
-  searchQuery: string;
+  //TODO: REMOVE
+  searchQuery: string = 'navn-r';
 
   recieveQuery($event: string) {
     this.searchQuery = $event;

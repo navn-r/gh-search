@@ -15,8 +15,7 @@ export class UserCardComponent implements OnInit {
 
   user: GithubUser;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   ngOnChanges(): void {
     console.log(this.name);
@@ -26,10 +25,12 @@ export class UserCardComponent implements OnInit {
   }
 
   getUser(name: string): void {
-    this.githubService.getUser(name).subscribe((res) => {
-      this.user = res;
-      console.log(this.user);
-    });
+    this.githubService.getUser(name).subscribe(
+      (res) => {
+        this.user = res;
+      },
+      (err) => (this.user = null)
+    );
   }
 
   getAvatarImage() {
