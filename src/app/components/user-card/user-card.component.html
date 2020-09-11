@@ -1,13 +1,6 @@
-<mat-card *ngIf="user && user.id; else none">
+<mat-card>
   <mat-card-header>
     <div mat-card-avatar id="user-image" [ngStyle]="getAvatarImage()"></div>
     <mat-card-title>{{ user.login }}</mat-card-title>
-    <mat-card-subtitle>{{ user.name }}</mat-card-subtitle>
   </mat-card-header>
 </mat-card>
-<ng-template #none>
-  <div>
-    <h3 color="warn">No User Found</h3>
-    <p>Please try again</p>
-  </div>
-</ng-template>

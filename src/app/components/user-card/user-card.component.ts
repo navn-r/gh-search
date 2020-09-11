@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { GithubService } from '../../github.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { GithubUser } from '../../models/gh-user';
 
 @Component({
@@ -8,30 +7,12 @@ import { GithubUser } from '../../models/gh-user';
   styleUrls: ['./user-card.component.scss'],
 })
 export class UserCardComponent implements OnInit {
-  constructor(private githubService: GithubService) {}
+  constructor() {}
 
   @Input()
-  name: string;
-
   user: GithubUser;
 
   ngOnInit(): void {}
-
-  ngOnChanges(): void {
-    console.log(this.name);
-    if (this.name !== '') {
-      this.getUser(this.name);
-    }
-  }
-
-  getUser(name: string): void {
-    this.githubService.getUser(name).subscribe(
-      (res) => {
-        this.user = res;
-      },
-      (err) => (this.user = null)
-    );
-  }
 
   getAvatarImage() {
     return {

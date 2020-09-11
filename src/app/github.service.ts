@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 export class GithubService {
   constructor(private http: HttpClient) {}
 
-  getUser(name: string): Observable<any> {
-    return this.http.get(`https://api.github.com/users/${name}`);
+  getUsers(name: string): Observable<any> {
+    console.log(name);
+    return this.http.get(`https://api.github.com/search/users?q=${name}`);
   }
 }

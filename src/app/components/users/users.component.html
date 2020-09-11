@@ -1,0 +1,10 @@
+<div *ngIf="searchQuery; else none" class="users-container">
+    <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
+</div>
+<ng-template #none>
+  <div id="none">
+      <h3>Powered by the Github API. Built with Angular.</h3>
+    <h4>Made with 💛 by Navinn Ravindaran.</h4>
+  </div>
+</ng-template>
+

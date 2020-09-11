@@ -16,11 +16,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar'; 
 
-import { MatExpansionModule } from '@angular/material/expansion'; 
+
+import { MatExpansionModule } from '@angular/material/expansion';
+import { UsersComponent } from './components/users/users.component'; 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, UserCardComponent, SearchBarComponent],
+  declarations: [AppComponent, HeaderComponent, UserCardComponent, SearchBarComponent, UsersComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -34,7 +37,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     FormsModule,
     MatTabsModule,
     MatDividerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,17 @@
+.users-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+app-user-card {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#none {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
