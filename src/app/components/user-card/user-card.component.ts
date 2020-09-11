@@ -16,7 +16,13 @@ export class UserCardComponent implements OnInit {
   user: GithubUser;
 
   ngOnInit(): void {
-    this.getUser(this.name);
+  }
+
+  ngOnChanges(): void {
+    console.log(this.name);
+    if (this.name !== '') {
+      this.getUser(this.name);
+    }
   }
 
   getUser(name: string): void {
