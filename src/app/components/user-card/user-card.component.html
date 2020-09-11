@@ -1,0 +1,7 @@
+<mat-card *ngIf="user">
+    <mat-card-header>
+        <div mat-card-avatar id="user-image" [ngStyle]="getAvatarImage()"></div>
+        <mat-card-title>{{user.login}}</mat-card-title>
+        <mat-card-subtitle>{{user.name}}</mat-card-subtitle>
+    </mat-card-header>
+</mat-card>
