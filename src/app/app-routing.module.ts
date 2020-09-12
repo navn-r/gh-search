@@ -4,14 +4,15 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import { SearchPanelComponent } from './components/search-panel/search-panel.component';
 
 const routes: Routes = [
-     {
-        path: '',
-        component: SearchPanelComponent
-    },
-    {
-        path: 'users/:name',
-        component: UserDetailsComponent
-    }
+  {
+    path: '',
+    component: SearchPanelComponent,
+  },
+  {
+    path: 'users/:name',
+    component: UserDetailsComponent,
+  },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
