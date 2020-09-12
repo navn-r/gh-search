@@ -6,6 +6,7 @@ install:
 - npm ci
 script:
 - npm run build.prod
+- cp ./dist/gh-search/index.html ./dist/gh-search/404.html
 deploy:
   provider: pages
   skip_cleanup: true
