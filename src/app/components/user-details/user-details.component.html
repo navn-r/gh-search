@@ -1,0 +1,31 @@
+<mat-toolbar>
+  <button mat-mini-fab routerLink="/" matTooltip="Back to safety">
+    <mat-icon>keyboard_backspace</mat-icon>
+  </button>
+  <span id="user-id">User Details</span>
+</mat-toolbar>
+<div id="main-container">
+  <mat-card id="main-card">
+    <div class="info-container">
+      <div>
+        <img class="user-image" src="{{ user.avatar_url }}" alt="" />
+      </div>
+      <div class="info-text">
+        <mat-card-title>{{ user.login }}</mat-card-title>
+        <mat-card-subtitle>{{ user.name }}</mat-card-subtitle>
+        <blockquote>{{user.bio}}</blockquote>
+        <div id="user-stats">
+           {{user.public_repos}} repositories <br>
+           {{user.following}} following <br>
+           {{user.followers}} followers 
+        </div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-stroked-button target="_blank" href="{{user.html_url}}">FULL PROFILE</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

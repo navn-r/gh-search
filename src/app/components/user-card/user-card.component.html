@@ -1,6 +1,6 @@
-<mat-card>
+<mat-card (click)="navigate()" routerLink="/users/{{user.login}}">
   <mat-card-header>
-    <div mat-card-avatar id="user-image" [ngStyle]="getAvatarImage()"></div>
+    <img mat-card-avatar id="user-image" src="{{user.avatar_url}}" />
     <mat-card-title>{{ user.login }}</mat-card-title>
   </mat-card-header>
 </mat-card>

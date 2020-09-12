@@ -9,7 +9,10 @@ export class GithubService {
   constructor(private http: HttpClient) {}
 
   getUsers(name: string): Observable<any> {
-    console.log(name);
     return this.http.get(`https://api.github.com/search/users?q=${name}`);
+  }
+
+  getUser(name: string): Observable<any> {
+    return this.http.get(`https://api.github.com/users/${name}`);
   }
 }

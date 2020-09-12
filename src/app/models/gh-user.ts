@@ -7,5 +7,6 @@ export interface GithubUser {
     repos_url: string,
     public_repos: number,
     followers: number,
-    following: number
+    following: number,
+    bio: string,
 }

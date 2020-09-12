@@ -14,10 +14,7 @@ export class UserCardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getAvatarImage() {
-    return {
-      'background-image': `url('${this.user.avatar_url}')`,
-      'background-size': 'cover',
-    };
+  navigate() {
+    
   }
 }

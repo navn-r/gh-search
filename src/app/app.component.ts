@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Github Search';
-
-  searchQuery: string;
-
-  recieveQuery($event: string) {
-    this.searchQuery = $event;
-  }
 }
