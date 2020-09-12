@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'users/:name',
     component: UserDetailsComponent,
   },
-  { path: '**', redirectTo: '/' },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
