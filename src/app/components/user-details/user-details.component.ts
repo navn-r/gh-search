@@ -27,7 +27,6 @@ export class UserDetailsComponent implements OnInit {
     this.name = this.route.snapshot.params.name;
     this.route.paramMap.subscribe((params) => {
       this.name = params.get('name');
-      console.log(this.currIndex);
       this.currIndex = 0;
       this.getUser(this.name);
       this.getFollowers(this.name);
