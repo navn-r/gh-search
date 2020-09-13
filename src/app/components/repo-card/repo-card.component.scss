@@ -4,7 +4,7 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
 mat-card {
     margin: 0.5rem;
-    width: 50%;
+    width: 80%;
 }
 
 mat-card-title {
@@ -21,4 +21,13 @@ mat-card-title {
     flex-direction: row;
     margin-left: 1rem;
     justify-content: space-between;
+}
+
+#links {
+    display: flex;
+    align-items: center;
+}
+
+#homepage {
+    cursor: pointer;    
 }

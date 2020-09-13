@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { TooltipPosition } from '@angular/material/tooltip';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +9,4 @@ export class HeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  repoPosition: TooltipPosition = 'left';
 }

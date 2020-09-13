@@ -23,8 +23,8 @@
     </div>
     <mat-divider></mat-divider>
     <mat-card-content>
-      <mat-tab-group dynamicHeight mat-align-tabs="center">
-        <mat-tab *ngIf="user.public_repos">
+      <mat-tab-group dynamicHeight mat-align-tabs="center" [selectedIndex]="currIndex" (selectedIndexChange)="changeTab($event)">
+        <mat-tab [disabled]="!user.public_repos" >
          <ng-template matTabLabel >
            <span matBadge="{{user.public_repos}}" matBadgeOverlap="false" matBadgeColor="primary">Repositories</span>
          </ng-template>
@@ -32,7 +32,7 @@
            <app-repo-card *ngFor="let repo of repos" [repo]="repo"></app-repo-card>
          </div>
         </mat-tab>
-        <mat-tab *ngIf="user.followers">
+        <mat-tab [disabled]="!user.followers" >
          <ng-template matTabLabel >
            <span matBadge="{{user.followers}}" matBadgeOverlap="false" matBadgeColor="primary">Followers</span>
          </ng-template>
@@ -40,7 +40,7 @@
           <app-user-card *ngFor="let user of followers" [user]="user"></app-user-card>
          </div>
         </mat-tab>
-        <mat-tab *ngIf="user.following">
+        <mat-tab [disabled]="!user.following" >
          <ng-template matTabLabel >
            <span matBadge="{{user.following}}" matBadgeOverlap="false" matBadgeColor="primary">Following</span>
          </ng-template>

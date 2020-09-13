@@ -1,4 +1,18 @@
-# Github Search
+# GitHub Search
+[![Build Status](https://travis-ci.org/navn-r/gh-search.svg?branch=src)](https://travis-ci.org/navn-r/gh-search)
+
+> Just a simple project to practice Angular. :sunglasses: 
+
+Search GitHub users by their username and view their profile along with public repos, followers and following details.
+
+Built with:  
+- Angular 10 (*obviously*)
+  - Angular Material for components
+- GitHub REST API
+  - Personal Access Token for basic auth
+- :heart:
+
+-----------------
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
 
