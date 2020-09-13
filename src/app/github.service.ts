@@ -15,7 +15,7 @@ export class GithubService {
   getUsers(name: string): Observable<any> {
     return this.http.get(`https://api.github.com/search/users?q=${name}`, {
       headers: {
-        authorization: `token ${this.token}`,
+        authorization: `token 372b90e1f154e5545f85514aca30fd7e333b4831`,
       },
     });
   }
@@ -23,7 +23,7 @@ export class GithubService {
   getUser(name: string): Observable<any> {
     return this.http.get(`https://api.github.com/users/${name}`, {
       headers: {
-        authorization: `token ${this.token}`,
+        authorization: `token 372b90e1f154e5545f85514aca30fd7e333b4831`,
       },
     });
   }
@@ -31,21 +31,21 @@ export class GithubService {
   getFollowing(name: string): Observable<any> {
     return this.http.get(`https://api.github.com/users/${name}/following`, {
       headers: {
-        authorization: `token ${this.token}`,
+        authorization: `token 372b90e1f154e5545f85514aca30fd7e333b4831`,
       },
     });
   }
   getFollowers(name: string): Observable<any> {
     return this.http.get(`https://api.github.com/users/${name}/followers`, {
       headers: {
-        authorization: `token ${this.token}`,
+        authorization: `token 372b90e1f154e5545f85514aca30fd7e333b4831`,
       },
     });
   }
   getRepos(name: string): Observable<any> {
     return this.http.get(`https://api.github.com/users/${name}/repos`, {
       headers: {
-        authorization: `token ${this.token}`,
+        authorization: `token 372b90e1f154e5545f85514aca30fd7e333b4831`,
       },
     });
   }
