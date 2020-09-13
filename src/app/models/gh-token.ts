@@ -1,1 +1,1 @@
-export const TOKEN = '0bd5f30be76c9d684a7ec2123e6b7718dd85fe86';
+export const TOKEN = 'c89e606b811cf53d13c175f752d0884e37f20412';
