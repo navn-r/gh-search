@@ -54,3 +54,28 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+
+#user-stats>mat-icon {
+  font-size: 1.5rem;
+}
+
+#user-stats>span {
+  display: flex;
+  align-items: center;
+}
+
+app-user-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+app-repo-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.detail-icon {
+  margin-right: 0.25rem;
+}

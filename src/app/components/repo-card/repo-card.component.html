@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            {{repo.name}}
+            <mat-icon class="forked" color="primary" *ngIf="repo.fork">call_split</mat-icon>
+            <mat-icon class="archived" *ngIf="repo.archived">archive</mat-icon>
+        </mat-card-title>
+        <mat-card-subtitle *ngIf="repo.description">
+            {{repo.description}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div id="content">
+            <!-- <span>{{repo.language}}</span>
+            <span id="license" *ngIf="repo.license"><mat-icon inline="true">account_balance</mat-icon> {{repo.license.name}}</span> -->
+            <mat-chip-list>
+                <mat-chip color="accent" selected *ngIf="repo.owner.login === repo.name"><em>Special</em></mat-chip>
+                <mat-chip color="primary" selected *ngIf="repo.language">{{repo.language}}</mat-chip>
+                <mat-chip color="warn" selected *ngIf="repo.license">{{repo.license.name}}</mat-chip>
+                <mat-chip><mat-icon>star</mat-icon>{{repo.stargazers_count}}</mat-chip>
+                <mat-chip><mat-icon>call_split</mat-icon>{{repo.forks}}</mat-chip>
+            </mat-chip-list>
+            <a mat-icon-button target="_blank" href="{{repo.html_url}}"><mat-icon>open_in_new</mat-icon></a>
+        </div>
+    </mat-card-content>
+</mat-card>

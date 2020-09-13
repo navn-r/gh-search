@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { GithubUser } from '../../models/gh-user';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-user-card',
@@ -7,14 +8,15 @@ import { GithubUser } from '../../models/gh-user';
   styleUrls: ['./user-card.component.scss'],
 })
 export class UserCardComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   @Input()
   user: GithubUser;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   navigate() {
-    
+    this.router.navigate([`/users/${this.user.login}`]);
   }
 }

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class GithubService {
+  
   constructor(private http: HttpClient) {}
 
   getUsers(name: string): Observable<any> {
@@ -14,5 +15,15 @@ export class GithubService {
 
   getUser(name: string): Observable<any> {
     return this.http.get(`https://api.github.com/users/${name}`);
+  }
+
+  getFollowing(name: string): Observable<any> {
+    return this.http.get(`https://api.github.com/users/${name}/following`);
+  }
+  getFollowers(name: string): Observable<any> {
+    return this.http.get(`https://api.github.com/users/${name}/followers`);
+  }
+  getRepos(name: string): Observable<any> {
+    return this.http.get(`https://api.github.com/users/${name}/repos`);
   }
 }

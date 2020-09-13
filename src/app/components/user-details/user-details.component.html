@@ -4,7 +4,7 @@
   </button>
   <span id="user-id">User Details</span>
 </mat-toolbar>
-<div id="main-container">
+<div id="main-container" *ngIf="user">
   <mat-card id="main-card">
     <div class="info-container">
       <div>
@@ -13,16 +13,42 @@
       <div class="info-text">
         <mat-card-title>{{ user.login }}</mat-card-title>
         <mat-card-subtitle>{{ user.name }}</mat-card-subtitle>
-        <blockquote>{{user.bio}}</blockquote>
+        <blockquote *ngIf="user.bio">{{user.bio}}</blockquote>
         <div id="user-stats">
-           {{user.public_repos}} repositories <br>
-           {{user.following}} following <br>
-           {{user.followers}} followers 
+          <span *ngIf="user.location"><mat-icon class="detail-icon" inline="true">place</mat-icon>{{user.location}}</span>
+          <span *ngIf="user.company"><mat-icon class="detail-icon" inline="true">business</mat-icon>{{user.company}}</span>
+          <span *ngIf="user.blog"><mat-icon class="detail-icon" inline="true">rss_feed</mat-icon><a href="{{user.blog}}" target="_blank">{{user.blog}}</a></span>
         </div>
       </div>
     </div>
     <mat-divider></mat-divider>
     <mat-card-content>
+      <mat-tab-group dynamicHeight mat-align-tabs="center">
+        <mat-tab *ngIf="user.public_repos">
+         <ng-template matTabLabel >
+           <span matBadge="{{user.public_repos}}" matBadgeOverlap="false" matBadgeColor="primary">Repositories</span>
+         </ng-template>
+         <div class="repos">
+           <app-repo-card *ngFor="let repo of repos" [repo]="repo"></app-repo-card>
+         </div>
+        </mat-tab>
+        <mat-tab *ngIf="user.followers">
+         <ng-template matTabLabel >
+           <span matBadge="{{user.followers}}" matBadgeOverlap="false" matBadgeColor="primary">Followers</span>
+         </ng-template>
+         <div class="users">
+          <app-user-card *ngFor="let user of followers" [user]="user"></app-user-card>
+         </div>
+        </mat-tab>
+        <mat-tab *ngIf="user.following">
+         <ng-template matTabLabel >
+           <span matBadge="{{user.following}}" matBadgeOverlap="false" matBadgeColor="primary">Following</span>
+         </ng-template>
+         <div class="users">
+          <app-user-card *ngFor="let user of following" [user]="user"></app-user-card>
+         </div>
+        </mat-tab>
+      </mat-tab-group>
     </mat-card-content>
     <mat-card-actions>
         <a mat-stroked-button target="_blank" href="{{user.html_url}}">FULL PROFILE</a>

@@ -21,6 +21,9 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { SearchPanelComponent } from './components/search-panel/search-panel.component';
+import { MatBadgeModule } from '@angular/material/badge';
+import { RepoCardComponent } from './components/repo-card/repo-card.component'; 
+import { MatChipsModule } from '@angular/material/chips'; 
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { SearchPanelComponent } from './components/search-panel/search-panel.com
     UsersComponent,
     UserDetailsComponent,
     SearchPanelComponent,
+    RepoCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,8 @@ import { SearchPanelComponent } from './components/search-panel/search-panel.com
     MatDividerModule,
     MatExpansionModule,
     MatSnackBarModule,
+    MatBadgeModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
